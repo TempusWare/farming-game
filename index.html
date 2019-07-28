@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Farming Game</title>
+  </head>
+  <body>
+    <p id="counter"></p>
+    <button onclick="update()">Farm</button>
+  </body>
+</html>
+<script type="text/javascript">
+  const counter = document.getElementById("counter");
+  var count;
+  if (localStorage["count"]) {
+    count = localStorage.getItem("count");
+  } else {
+    count = 0;
+  };
+  counter.innerHTML = count;
+  function update() {
+    count++;
+    localStorage.setItem("count", count);
+    counter.innerHTML = count;
+  };
+</script>
